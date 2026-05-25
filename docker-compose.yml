@@ -2,10 +2,10 @@ services:
   backend:
     build: ./backend
     ports:
-      - '3001:3001'
+      - '3000:3000'
     environment:
       DATABASE_URL: file:/data/data.sqlite
-      PORT: 3001
+      PORT: 3000
     volumes:
       - sqlite_data:/data
 
@@ -13,7 +13,7 @@ services:
     build:
       context: ./frontend
       args:
-        VITE_API_URL: http://localhost:3001
+        VITE_API_URL: /backend
     ports:
       - '8080:80'
     depends_on:

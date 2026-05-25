@@ -13,4 +13,6 @@ See the [root README](../README.md) for setup, Docker, and deployment instructio
 
 ## Environment
 
-Copy `.env.example` to `.env` and set `VITE_API_URL` if the API is not on `http://localhost:3001`.
+Copy `.env.example` to `.env` if you want to override the default API base.
+
+By default the frontend uses `/backend`, and the Vite dev server proxies that path to `http://localhost:3000`.

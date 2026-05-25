@@ -1,7 +1,11 @@
 import axios from 'axios';
 
+const configuredBaseUrl = import.meta.env.VITE_API_URL?.trim();
+
 export const BASE_URL =
-  import.meta.env.VITE_API_URL ?? 'http://localhost:3001';
+  configuredBaseUrl && configuredBaseUrl.length > 0
+    ? configuredBaseUrl.replace(/\/$/, '')
+    : '/backend';
 
 export const apiClient = axios.create({
   baseURL: BASE_URL,

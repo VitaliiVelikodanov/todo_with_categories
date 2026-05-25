@@ -25,7 +25,7 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/*
 
 ENV NODE_ENV=production
-ENV PORT=3001
+ENV PORT=3000
 
 COPY package*.json ./
 COPY prisma ./prisma/
@@ -38,6 +38,6 @@ COPY docker-entrypoint.sh ./docker-entrypoint.sh
 
 RUN chmod +x docker-entrypoint.sh
 
-EXPOSE 3001
+EXPOSE 3000
 
 ENTRYPOINT ["./docker-entrypoint.sh"]
