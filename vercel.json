@@ -1,6 +1,5 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "trailingSlash": false,
   "experimentalServices": {
     "frontend": {
       "root": "frontend",
@@ -10,7 +9,9 @@
     "backend": {
       "root": "backend",
       "routePrefix": "/backend",
-      "framework": "nestjs"
+      "framework": "nestjs",
+      "installCommand": "npm install",
+      "buildCommand": "npm run build"
     }
   }
 }
